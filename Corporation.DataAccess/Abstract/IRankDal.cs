@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Corporation.DataAccess.Abstract
 {
-    public interface IRankyDal : 
+    public interface IRankDal : 
         IEntityRepository<Rank>
     {
 

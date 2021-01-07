@@ -9,9 +9,9 @@ namespace Corporation.Business.Concrete
 {
     public class RankManager : IRankService
     {
-        IRankyDal _categoryDal;
+        IRankDal _categoryDal;
 
-        public RankManager(IRankyDal categoryDal)
+        public RankManager(IRankDal categoryDal)
         {
             _categoryDal = categoryDal;
         }

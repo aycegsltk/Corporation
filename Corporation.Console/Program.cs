@@ -14,6 +14,7 @@ namespace Corporation.Console
         {
             var empService = InstanceFactory.GetInstance<IEmpService>();
             var rankService = InstanceFactory.GetInstance<IRankService>();
+           // empService.Add(new Employee() { Name = "Deniz Bora", RankId = 2, Salary = 15000 });
             empService.GetAll().Join(rankService.GetAll(),
                 e=>e.RankId,
                 r=>r.RankId,
@@ -23,7 +24,7 @@ namespace Corporation.Console
                     Name=e.Name,
                     Salary=e.Salary,
                     Rank=r.RankName
-                }).ToList().ForEach(n=>System.Console.WriteLine($"{n.Id,-5}{n.Name,-15}{n.Salary,-10}{n.Rank,-10}"));
+                }).ToList().ForEach(n=>System.Console.WriteLine($"{n.Id,-5}{n.Name,-30}{n.Salary,-15}{n.Rank,-10}"));
         }
     }
 }

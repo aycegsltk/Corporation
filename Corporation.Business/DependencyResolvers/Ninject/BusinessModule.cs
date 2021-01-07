@@ -14,7 +14,7 @@ namespace Corporation.Business.DependencyResolvers.Ninject
         public override void Load()
         {
             Bind<IRankService>().To<RankManager>().InSingletonScope();
-            Bind<IRankyDal>().To<EfRankDal>().InSingletonScope();
+            Bind<IRankDal>().To<EfRankDal>().InSingletonScope();
             Bind<IEmpService>().To<EmpManager>().InSingletonScope();
             Bind<IEmpDal>().To<EfEmpDal>().InSingletonScope();
         }

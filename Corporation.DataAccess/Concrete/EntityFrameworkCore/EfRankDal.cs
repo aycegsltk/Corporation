@@ -6,7 +6,7 @@ using Corporation.DataAccess.Abstract;
 
 namespace Corporation.DataAccess.Concrete.EntityFrameworkCore
 {
-    public class EfRankDal : EfRepositoryBase<Rank, CorporationDBContext>, IRankyDal
+    public class EfRankDal : EfRepositoryBase<Rank, CorporationDBContext>, IRankDal
     {
 
     }
