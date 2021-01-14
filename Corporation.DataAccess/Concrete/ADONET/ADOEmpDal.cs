@@ -31,9 +31,10 @@ namespace Corporation.DataAccess.Concrete.ADONET
                 Employee emp = new Employee
                 {
                     Id = Convert.ToInt32(reader[0]),
-                    Name = reader[1].ToString(),
-                    Salary = Convert.ToDecimal(reader[2]),
-                    RankId = Convert.ToInt32(reader[3]),
+                    FirstName = reader[1].ToString(),
+                    LastName = reader[2].ToString(),
+                    Salary = Convert.ToDecimal(reader[3]),
+                    RankId = Convert.ToInt32(reader[4]),
                 };
 
                 empList.Add(emp);
@@ -52,9 +53,10 @@ namespace Corporation.DataAccess.Concrete.ADONET
                 Employee emp = new Employee
                 {
                     Id = Convert.ToInt32(reader[0]),
-                    Name = reader[1].ToString(),
-                    Salary = Convert.ToDecimal(reader[2]),
-                    RankId = Convert.ToInt32(reader[3]),
+                    FirstName = reader[1].ToString(),
+                    LastName = reader[2].ToString(),
+                    Salary = Convert.ToDecimal(reader[3]),
+                    RankId = Convert.ToInt32(reader[4]),
                 };
 
                 return emp;
@@ -65,9 +67,10 @@ namespace Corporation.DataAccess.Concrete.ADONET
         public void Add(Employee entity)
         {
             using (SqlCommand cmd =
-                new SqlCommand("INSERT INTO Employees (Name,Salary, RankId) VALUES (@Name,@salary, @RankIdd)"))
+                new SqlCommand("INSERT INTO Employees (FirstName,LastName,Salary, RankId) VALUES (@FirstName,@LastName,@salary, @RankIdd)"))
             {
-                cmd.Parameters.AddWithValue("Name", entity.Name);
+                cmd.Parameters.AddWithValue("FirstName", entity.FirstName);
+                cmd.Parameters.AddWithValue("LastName", entity.LastName);
                 cmd.Parameters.AddWithValue("Salary", entity.Salary);
                 cmd.Parameters.AddWithValue("RankId", entity.RankId);
                 VTYS.SqlExecuteNonQuery(cmd);
@@ -77,10 +80,11 @@ namespace Corporation.DataAccess.Concrete.ADONET
         public void Update(Employee entity)
         {
             using (SqlCommand cmd =
-                new SqlCommand("UPDATE Employees set Name = @Name, Salary = @Salary, RankId = @RankId, where Id = @Id"))
+                new SqlCommand("UPDATE Employees set FirstName = @FirstName, LastName = @LastName, Salary = @Salary, RankId = @RankId, where Id = @Id"))
             {
                 cmd.Parameters.AddWithValue("Id", entity.Id);
-                cmd.Parameters.AddWithValue("Name", entity.Name);
+                cmd.Parameters.AddWithValue("FirstName", entity.FirstName);
+                cmd.Parameters.AddWithValue("LastName", entity.LastName);
                 cmd.Parameters.AddWithValue("Salary", entity.Salary);
                 cmd.Parameters.AddWithValue("RankId", entity.RankId);
                 VTYS.SqlExecuteNonQuery(cmd);

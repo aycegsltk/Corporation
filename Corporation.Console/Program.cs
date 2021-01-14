@@ -21,10 +21,11 @@ namespace Corporation.Console
                 (e,r)=>new
                 {
                     Id=e.Id,
-                    Name=e.Name,
+                    FirstName=e.FirstName,
+                    LastName=e.LastName,
                     Salary=e.Salary,
                     Rank=r.RankName
-                }).ToList().ForEach(n=>System.Console.WriteLine($"{n.Id,-5}{n.Name,-30}{n.Salary,-15}{n.Rank,-10}"));
+                }).ToList().ForEach(n=>System.Console.WriteLine($"{n.Id,-5}{n.FirstName,-30}{n.LastName,-30}{n.Salary,-15}{n.Rank,-10}"));
         }
     }
 }
